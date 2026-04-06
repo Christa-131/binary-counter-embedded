@@ -1,42 +1,40 @@
-# binary-counter-embedded
-# Embedded Binary Counter with Button Control
+
+# Binary LED Counter (1–31)
 
 ## Overview
-This project implements a binary counter (1–31) using LEDs to display values.  
-A push button is used to control the counter, with software debouncing to ensure stable input.
+This project implements a binary counter using 5 LEDs to represent values from 1 to 31.
+
+Each LED corresponds to one bit, allowing visualization of binary numbers in real time.
 
 ## Features
-- Binary counting using LEDs
-- Button-controlled input
-- Software debouncing for reliable signal reading
-- Bitwise operations for efficient data handling
+- Binary counting using 5 LEDs
+- Representation of numbers from 1 to 31
+- Use of bitwise operations for efficient control
 
 ## Hardware Components
 - Arduino board
-- LEDs (5)
+- 5 LEDs
 - Resistors
-- Push button
 - Breadboard and wires
 
 ## How it Works
-The system increments a counter and displays its value in binary using LEDs.  
-Each LED represents one bit.  
+The system increments a counter and displays its value in binary format using LEDs.
 
-A push button is used as input:
-- Short press → increment counter
-- (Optional future improvement: long press → reset)
+Each LED represents a bit:
+- LED 1 → Least Significant Bit (LSB)
+- LED 5 → Most Significant Bit (MSB)
 
-To avoid false triggering due to mechanical bouncing, a software debouncing method is implemented.
+Bitwise operations are used to extract each bit and map it to the corresponding LED.
 
 ## Code Structure
-- Main loop handles button reading and counter update
-- Debounce logic ensures stable input detection
-- Bitwise operations are used to map counter values to LEDs
+- Counter variable increments over time
+- Bitwise shifting is used to control each LED
+- Loop updates LED states continuously
 
 ## Future Improvements
-- Add reset functionality (long press)
-- Add display (LCD/OLED)
-- Convert to interrupt-based input handling
+- Add button control for manual increment
+- Add reset functionality
+- Integrate display module (LCD/OLED)
 
 ## Author
 Crista Lucia Nchama
